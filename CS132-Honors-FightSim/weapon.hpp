@@ -15,25 +15,10 @@ This class is the main weapon class from which all damage items will inherit.
 class Weapon : public Item
 {
 public:
-	Weapon(const string& name, const string& description, const string& type, int value, int damage) :
-		Item(name, description, type, value), damage(damage) {}
-
-	// Damage
-	void setDamage(int newDamage)
-	{
-		damage = newDamage;
-	}
-	int getDamage()	const
-	{
-		return damage;
-	}
-
-	// Display: name, description, type, value, and damage
-	void displayDetails() const override
-	{
-		Item::displayDetails();
-		cout << "\t\t\033[31;3mDamage: " << getDamage() << "\033[0m" << endl; // red italic
-	}
+	Weapon(const string& name, const string& description, const string& type, int value, int damage);
+	void setDamage(int newDamage);
+	int getDamage()	const;
+	void displayDetails() const override;
 
 private:
 	int damage;
