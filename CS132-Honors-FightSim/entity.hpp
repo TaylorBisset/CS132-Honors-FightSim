@@ -41,7 +41,7 @@ public:
 	// Display: name and description
 	virtual void displayDetails() const
 	{
-		cout << "\033[1m" << getName() << "\033[0m" << endl;
+		cout << "\033[1m" << getName() << "\033[0m" << endl; // bold
 		cout << getDescription() << endl;
 	}
 

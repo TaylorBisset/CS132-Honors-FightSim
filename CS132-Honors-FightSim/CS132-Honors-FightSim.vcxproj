@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClInclude Include="entity.hpp" />
     <ClInclude Include="item.hpp" />
+    <ClInclude Include="weapon.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

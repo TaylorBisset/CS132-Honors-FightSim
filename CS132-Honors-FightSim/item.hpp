@@ -42,7 +42,7 @@ public:
 	{
 		Entity::displayDetails();
 		cout << "\t" << getType() << endl;
-		cout << "\t\t\033[33mValue: " << getValue() << " coins\033[0m" << endl;
+		cout << "\t\t\033[33mValue: " << getValue() << " coins\033[0m" << endl; // yellow
 	}
 
 private:
