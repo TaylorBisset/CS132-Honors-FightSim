@@ -133,6 +133,7 @@
     <ClCompile Include="weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="armor.hpp" />
     <ClInclude Include="entity.hpp" />
     <ClInclude Include="item.hpp" />
     <ClInclude Include="weapon.hpp" />
