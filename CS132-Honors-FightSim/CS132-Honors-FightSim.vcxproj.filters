@@ -50,5 +50,8 @@
     <ClInclude Include="character.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="game_functions.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

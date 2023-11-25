@@ -138,6 +138,7 @@
     <ClInclude Include="armor.hpp" />
     <ClInclude Include="character.hpp" />
     <ClInclude Include="entity.hpp" />
+    <ClInclude Include="game_functions.hpp" />
     <ClInclude Include="item.hpp" />
     <ClInclude Include="weapon.hpp" />
   </ItemGroup>
