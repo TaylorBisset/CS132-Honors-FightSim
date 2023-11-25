@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="armor.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="item.cpp" />
     <ClCompile Include="main.cpp" />
