@@ -3,7 +3,8 @@
 #include "item.hpp"
 
 // Constructor
-Item::Item(const string& name, const string& description, const string& type, int value) :
+Item::Item(const string& name, const string& description, const string& type, int value) 
+	:
 	Entity(name, description), type(type), value(value) {} 
 
 // Type Setter

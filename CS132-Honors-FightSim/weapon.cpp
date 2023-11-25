@@ -3,7 +3,8 @@
 #include "weapon.hpp"
 
 // Constructor
-Weapon::Weapon(const string& name, const string& description, const string& type, int value, int damage) : 
+Weapon::Weapon(const string& name, const string& description, const string& type, int value, int damage) 
+    : 
     Item(name, description, type, value), damage(damage) {}
 
 // Damage Setter

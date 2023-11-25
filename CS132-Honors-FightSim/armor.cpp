@@ -3,7 +3,8 @@
 #include "armor.hpp"
 
 // Constructor
-Armor::Armor(const string& name, const string& description, const string& type, int value, int protection) :
+Armor::Armor(const string& name, const string& description, const string& type, int value, int protection) 
+    :
     Item(name, description, type, value), protection(protection) {}
 
 // Protection Setter

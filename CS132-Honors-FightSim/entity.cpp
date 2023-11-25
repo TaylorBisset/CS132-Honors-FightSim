@@ -3,7 +3,8 @@
 #include "entity.hpp"
 
 // Constructor
-Entity::Entity(const string& name, const string& description) :
+Entity::Entity(const string& name, const string& description) 
+	:
     name(name), description(description) {}
 
 // Name Setter

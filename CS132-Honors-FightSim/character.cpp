@@ -7,7 +7,8 @@ Character::Character(const string& name, const string& description,
 	int maxHealth, int currentHealth,
 	int attack, int baseAttack,
 	int defense, int baseDefense,
-	int level, int experience, int coins) : 
+	int level, int experience, int coins) 
+	: 
 	Entity(name, description),
 	maxHealth(maxHealth), currentHealth(currentHealth),
 	attack(attack), baseAttack(baseAttack),
