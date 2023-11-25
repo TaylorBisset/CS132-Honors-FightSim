@@ -18,7 +18,7 @@ int Weapon::getDamage() const
     return damage;
 }
 
-// Display: | name and description | type and value | damage
+// Display: | name and description | type and value | damage |
 void Weapon::displayDetails() const 
 {
     Item::displayDetails();

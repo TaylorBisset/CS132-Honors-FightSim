@@ -15,35 +15,15 @@ using namespace std;
 class Entity
 {
 public: 
-	Entity(const string& name, const string& description) : 
-		name(name), description(description) {}
+	Entity(const string& name, const string& description);
 
-	// Name
-	void setName(const string& newName)
-	{
-		name = newName;
-	}
-	string getName() const
-	{
-		return name;
-	}
+	void setName(const string& newName);
+	string getName() const;
 
-	// Description
-	void setDescription(const string& newDescription)
-	{
-		description = newDescription;
-	}
-	string getDescription() const
-	{
-		return description;
-	}
+	void setDescription(const string& newDescription);
+	string getDescription() const;
 
-	// Display: name and description
-	virtual void displayDetails() const
-	{
-		cout << "\033[1m" << getName() << "\033[0m" << endl; // bold
-		cout << getDescription() << endl;
-	}
+	virtual void displayDetails() const;
 
 private:
 	string name;
