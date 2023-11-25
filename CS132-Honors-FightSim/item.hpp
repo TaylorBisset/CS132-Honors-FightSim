@@ -14,36 +14,15 @@ This class is the main item class from which all items will inherit.
 class Item : public Entity
 {
 public:
-	Item(const string& name, const string& description, const string& type, int value) :
-		Entity(name, description), type(type), value(value) {}
+	Item(const string& name, const string& description, const string& type, int value);
 
-	// Type
-	void setType(const string& newType)
-	{
-		type = newType;
-	}
-	string getType() const
-	{
-		return type;
-	}
+	void setType(const string& newType);
+	string getType() const;
 
-	// Value
-	void setValue(const int newValue)
-	{
-		value = newValue;
-	}
-	int getValue() const
-	{
-		return value;
-	}
+	void setValue(const int newValue);
+	int getValue() const;
 
-	// Display: name, description, type, and value
-	virtual void displayDetails() const
-	{
-		Entity::displayDetails();
-		cout << "\t" << getType() << endl;
-		cout << "\t\t\033[33mValue: " << getValue() << " coins\033[0m" << endl; // yellow
-	}
+	virtual void displayDetails() const;
 
 private:
 	string type; // armor, weapon
