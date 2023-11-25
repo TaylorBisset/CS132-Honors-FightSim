@@ -50,7 +50,7 @@ public:
 	int getCoins() const;
 	void modifyCoins(int coinChange);
 
-	virtual void displayDetails() const;
+	void displayDetails() const override;
 
 private:
 	int maxHealth;
