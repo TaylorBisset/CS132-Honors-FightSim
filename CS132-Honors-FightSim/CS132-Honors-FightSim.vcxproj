@@ -130,6 +130,7 @@
     <ClCompile Include="armor.cpp" />
     <ClCompile Include="character.cpp" />
     <ClCompile Include="entity.cpp" />
+    <ClCompile Include="game_functions.cpp" />
     <ClCompile Include="item.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="weapon.cpp" />
