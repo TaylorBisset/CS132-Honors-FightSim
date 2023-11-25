@@ -2,6 +2,13 @@
 
 #include "game_functions.hpp"
 
+char ll = 200;
+char ul = 201;
+char ur = 187;
+char lr = 188;
+char hl = 186;
+char vl = 205;
+
 void sleep(int seconds)
 {
 	std::this_thread::sleep_for(std::chrono::seconds(seconds));
