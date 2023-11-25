@@ -38,6 +38,13 @@ public:
 		return description;
 	}
 
+	// Display: name and description
+	virtual void displayDetails() const
+	{
+		cout << "\033[1m" << getName() << "\033[0m" << endl;
+		cout << getDescription() << endl;
+	}
+
 private:
 	string name;
 	string description;
