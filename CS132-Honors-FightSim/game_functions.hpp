@@ -21,4 +21,7 @@ void LoadGame(Character& playerCharacter);
 
 void IdleMenu(Character playerCharacter);
 
+void InitializeOpponent(Character& opponent);
+void Fight(Character& player, Character& opponent);
+
 #endif // GAME_FUNCTIONS_HPP

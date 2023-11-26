@@ -237,10 +237,13 @@ void IdleMenu(Character playerCharacter)
 		int choice;
 		cin >> choice;
 
+		Character opponent;
+
 		switch (choice)
 		{
 		case 1:
-			// Implement the fight logic
+			InitializeOpponent(opponent);
+			Fight(playerCharacter, opponent);
 			break;
 		case 2:
 			playerCharacter.displayDetails();
@@ -277,4 +280,35 @@ void InitializeOpponent(Character& opponent)
 	opponent.setAttack(1);
 	opponent.setDefense(1);
 	opponent.setCoins(5);
+}
+
+void Fight(Character& player, Character& opponent) 
+{
+	cout << "\n*** Fight begins! ***\n";
+
+	while (player.getCurrentHealth() > 0 && opponent.getCurrentHealth() > 0) 
+	{
+		// Player attacks opponent
+		player.hit(opponent);
+
+		// Check if opponent is defeated
+		if (opponent.getCurrentHealth() <= 0) 
+		{
+			cout << "You defeated the opponent!\n";
+			player.modifyExperience(5);  // Gain experience for winning
+			player.modifyCoins(opponent.getCoins());  // Gain coins from defeated opponent
+			break;
+		}
+
+		// Opponent attacks player
+		opponent.hit(player);
+
+		// Check if player is defeated
+		if (player.getCurrentHealth() <= 0) 
+		{
+			cout << "You were defeated by the opponent. Game over.\n";
+			GameMenu();
+			break;
+		}
+	}
 }
