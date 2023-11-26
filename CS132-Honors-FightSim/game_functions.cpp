@@ -2,19 +2,19 @@
 
 #include "game_functions.hpp"
 
-char dll = 200;
-char dul = 201;
-char dur = 187;
-char dlr = 188;
-char dhl = 186;
-char dvl = 205;
+char dll = static_cast <char>(200);
+char dul = static_cast <char>(201);
+char dur = static_cast <char>(187);
+char dlr = static_cast <char>(188);
+char dhl = static_cast <char>(186);
+char dvl = static_cast <char>(205);
 
-char sll = 192;
-char sul = 218;
-char sur = 191;
-char slr = 217;
-char shl = 179;
-char svl = 196;
+char sll = static_cast <char>(192);
+char sul = static_cast <char>(218);
+char sur = static_cast <char>(191);
+char slr = static_cast <char>(217);
+char shl = static_cast <char>(179);
+char svl = static_cast <char>(196);
 
 void sleep(int seconds)
 {
@@ -43,7 +43,9 @@ void GameMenu()
 	while (true)
 	{
 		cout << endl;
+
 		// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 		// main menu top line
 		cout << "\t" << dul;
 		for (int i = 0; i < 31; i++)
@@ -183,6 +185,7 @@ void LoadGame(Character& playerCharacter)
 		cerr << "Unable to open the save file for loading!\n";
 	}
 	sleep(1);
+	IdleMenu(playerCharacter);
 }
 
 void IdleMenu(Character playerCharacter)
