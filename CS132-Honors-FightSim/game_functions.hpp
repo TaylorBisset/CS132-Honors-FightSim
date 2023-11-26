@@ -11,5 +11,6 @@ using namespace std;
 
 void sleep(int seconds);
 void QuitGame();
+void GameMenu();
 
 #endif // GAME_FUNCTIONS_HPP

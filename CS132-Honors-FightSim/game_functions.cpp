@@ -28,3 +28,56 @@ void QuitGame()
 #endif
 	exit(0);
 }
+
+void GameMenu()
+{
+	while (true)
+	{
+		cout << endl;
+		// main menu top line
+		cout << "\t" << ul;
+		for (int i = 0; i < 31; i++)
+		{
+			cout << vl;
+		}
+		cout << ur << endl;
+
+		cout << "\t" << hl << "                               " << hl << "\n";
+		cout << "\t" << hl << " \033[1mWelcome to the Armamentarium!\033[0m " << hl << "\n";
+		cout << "\t" << hl << "                               " << hl << "\n";
+		cout << "\t" << hl << "   \033[1;6mWhat would you like to do?\033[0m  " << hl << "\n";
+		cout << "\t" << hl << "                               " << hl << "\n";
+		cout << "\t" << hl << "   1  New Game                 " << hl << "\n";
+		cout << "\t" << hl << "   2  Load Game                " << hl << "\n";
+		cout << "\t" << hl << "   3  Leave Game               " << hl << "\n";
+		cout << "\t" << hl << "                               " << hl << "\n";
+
+		// main menu end line
+		cout << "\t" << ll;
+		for (int i = 0; i < 31; i++)
+		{
+			cout << vl;
+		}
+		cout << lr << endl << endl << "\t";
+
+		int choice;
+		string name;
+		cin >> choice;
+
+		switch (choice)
+		{
+		case 1:
+			// NewGame();
+			break;
+		case 2:
+			// LoadGame();
+			break;
+		case 3:
+			QuitGame();
+			break;
+		default:
+			cout << "\nInvalid choice.\nPlease select a valid option.\n\n";
+			break;
+		}
+	}
+}

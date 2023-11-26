@@ -183,7 +183,7 @@ void Character::displayDetails() const
 	Entity::displayDetails();
 	// health
 	cout << "\t\033[1mHealth: " << getMaxHealth() << "\033[0m / "; // Bold
-	cout << getCurrentHealth << endl;
+	cout << getCurrentHealth() << endl;
 	// level
 	cout << "Level: " << getLevel() << endl;
 	// experience

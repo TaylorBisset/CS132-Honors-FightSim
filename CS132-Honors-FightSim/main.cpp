@@ -14,10 +14,11 @@ Old Repo:		https://github.com/TaylorBisset/CS132-VideoGameFightSim-HonorsProject
 // main.cpp
 
 #include <iostream>
+#include "game_functions.hpp"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	GameMenu();
 
 	return 0;
 }
