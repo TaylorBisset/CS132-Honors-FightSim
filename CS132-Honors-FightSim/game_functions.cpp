@@ -161,9 +161,14 @@ void LoadGame(Character& playerCharacter)
 		string name, description;
 		int level, experience, maxHealth, currentHealth, attack, baseAttack, defense, baseDefense, coins;
 
-		loadFile >> name >> description >> level >> experience 
+		loadFile >> name >> ws;
+		getline(loadFile, description);
+		loadFile
+			>> level >> experience 
 			>> maxHealth >> currentHealth 
-			>> attack >> baseAttack >> defense >> baseDefense >> coins;
+			>> attack >> baseAttack 
+			>> defense >> baseDefense 
+			>> coins;
 
 		playerCharacter.setName(name);
 		playerCharacter.setDescription(description);
@@ -183,6 +188,7 @@ void LoadGame(Character& playerCharacter)
 	{
 		// Error opening
 		cerr << "Unable to open the save file for loading!\n";
+		return;
 	}
 	sleep(1);
 	IdleMenu(playerCharacter);
