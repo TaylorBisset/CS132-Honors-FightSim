@@ -213,3 +213,13 @@ void Character::displayDetails() const
 	cout << "\t\033[33mCoins: " << getCoins() << "\033[0m";							// yellow
 	cout << endl;
 }
+
+void Character::hit(Character& target)
+{
+	// set to zero, and does not apply any health change if attack is lower than defense
+	int damage = max(0, getAttack() - target.getDefense()); 
+	// subtracts health according to difference
+	target.modifyCurrentHealth(-damage);
+	// announces damage dealth from one to another
+	cout << getName() << " hits " << target.getName() << " for " << damage << " damage!\n";
+}

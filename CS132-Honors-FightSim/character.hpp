@@ -54,6 +54,8 @@ public:
 
 	void displayDetails() const override;
 
+	void hit(Character& target);
+
 private:
 	int maxHealth;
 	int currentHealth;
