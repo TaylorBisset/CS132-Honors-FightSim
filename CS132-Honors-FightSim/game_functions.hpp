@@ -7,10 +7,14 @@
 #include <fstream>
 #include <thread>
 
+#include "character.hpp"
+
 using namespace std;
 
 void sleep(int seconds);
 void QuitGame();
 void GameMenu();
+
+void NewGame();
 
 #endif // GAME_FUNCTIONS_HPP

@@ -67,10 +67,10 @@ void GameMenu()
 		switch (choice)
 		{
 		case 1:
-			// NewGame();
+			NewGame();
 			break;
 		case 2:
-			// LoadGame();
+			// Load Game
 			break;
 		case 3:
 			QuitGame();
@@ -80,4 +80,25 @@ void GameMenu()
 			break;
 		}
 	}
+}
+
+void NewGame()
+{
+	cout << "\n\tWhat is your name, warrior?\n\t";
+	string playerName;
+	cin >> playerName;
+
+	Character playerCharacter(playerName, "A novice warrior.", 10, 10, 1, 1, 1, 1, 1, 0, 0);
+
+	cout << "\n\tWelcome, " << playerCharacter.getName() << "!\n";
+	sleep(1);
+	cout << "\tI hope you find your experience here to be";
+	sleep(1); cout << "."; sleep(1); cout << "."; sleep(1);
+	cout << "."; sleep(1); cout << " entertaining.\n";
+	sleep(1);
+	cout << "\tHere's 10 coins to gear up with.\n";
+	sleep(1);
+	playerCharacter.modifyCoins(10);
+	sleep(2);
+	// IdleMenu
 }

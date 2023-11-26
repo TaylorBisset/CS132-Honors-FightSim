@@ -189,9 +189,11 @@ void Character::displayDetails() const
 	// experience
 	cout << "Exp: " << getExperience() << endl;
 	// attack
-	cout << "\t\033[31mAttack: " << getAttack() << "\033[0m / "; // red
+	cout << "\t\033[31mAttack: " << getAttack() << "\033[0m\n"; // red
+	cout << "\t\033[31;2mBase Attack: " << getBaseAttack() << "\033[0m"; // red faint
 	// defense
-	cout << "\t\033[32mDefense: " << getDefense() << "\033[0m / "; // green
+	cout << "\t\033[32mDefense: " << getDefense() << "\033[0m\n"; // green
+	cout << "\t\033[32;2mBase Defense: " << getBaseDefense() << "\033[0m"; // green faint
 	// coins
 	cout << "\t\033[33mCoins: " << getCoins() << "\033[0m / "; // yellow
 }
