@@ -223,5 +223,4 @@ void Character::hit(Character& target)
 	target.modifyCurrentHealth(-damage);
 	// announces damage dealt from one to another
 	cout << getName() << " hits " << target.getName() << " for " << damage << " damage!\n";
-	sleep(1);
 }

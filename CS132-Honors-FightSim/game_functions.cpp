@@ -284,29 +284,44 @@ void InitializeOpponent(Character& opponent)
 
 void Fight(Character& player, Character& opponent) 
 {
-	cout << "\n*** Fight begins! ***\n";
+	cout << "\n*** Fight begins! ***\n\n";
 
 	while (player.getCurrentHealth() > 0 && opponent.getCurrentHealth() > 0) 
 	{
 		// Player attacks opponent
 		player.hit(opponent);
-
+		sleep(1);
+		cout << "\t\t\033[1m" << opponent.getName() << "\033[0m current health: "
+			<< "\033[32m" << opponent.getCurrentHealth() << "\033[0m\n";
+		sleep(1);
+		cout << endl;
 		// Check if opponent is defeated
 		if (opponent.getCurrentHealth() <= 0) 
 		{
-			cout << "You defeated the opponent!\n";
+			sleep(2);
+			cout << "You defeated the opponent!\a\n";
+			sleep(1);
 			player.modifyExperience(5);  // Gain experience for winning
 			player.modifyCoins(opponent.getCoins());  // Gain coins from defeated opponent
+			sleep(2);
+			player.setCurrentHealth(player.getMaxHealth()); // Heal player before returning to IdleMenu
 			break;
 		}
 
 		// Opponent attacks player
 		opponent.hit(player);
+		sleep(1);
+		cout << "\t\t\033[1m" << player.getName() << "\033[0m current health: "
+			<< "\033[32m" << player.getCurrentHealth() << "\033[0m\n";
+		sleep(1);
+		cout << endl;
 
-		// Check if player is defeated
+		// Game Over
 		if (player.getCurrentHealth() <= 0) 
 		{
-			cout << "You were defeated by the opponent. Game over.\n";
+			sleep(2);
+			cout << "\n\tYou were defeated by the opponent.\n\tGame over.\n";
+			sleep(2);
 			GameMenu();
 			break;
 		}
