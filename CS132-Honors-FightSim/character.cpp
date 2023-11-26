@@ -29,7 +29,7 @@ Character::Character(const string& name, const string& description,
 	attack(attack), baseAttack(baseAttack),
 	defense(defense), baseDefense(baseDefense),
 	level(level), experience(experience), coins(coins) {}
-
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 // Max Health Setter
 void Character::setMaxHealth(int newMaxHealth)
 {
@@ -64,11 +64,11 @@ void Character::modifyCurrentHealth(int healthChange)
 	currentHealth += healthChange;
 	setCurrentHealth(currentHealth);
 }
-
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 // Attack Setter
 void Character::setAttack(int newAttack)
 {
-	attack = newAttack;
+	attack = newAttack; // baseAttack + attackBonus (given by weapons)
 }
 
 // Attack Getter
@@ -80,7 +80,7 @@ int Character::getAttack() const
 // Base Attack Setter
 void Character::setBaseAttack(int newBaseAttack)
 {
-	baseAttack = newBaseAttack;
+	baseAttack = newBaseAttack; // equal to level
 }
 
 // Base Attack Getter
@@ -89,17 +89,22 @@ int Character::getBaseAttack() const
 	return baseAttack;
 }
 
-// Base Attack Modifier
-void Character::modifyAttack(int attackBonus)
+// Attack Bonus Setter
+void Character::setAttackBonus(int newAttackBonus)
 {
-	attack = baseAttack + attackBonus;
-	setAttack(attack);
+	attackBonus = newAttackBonus;
 }
 
+// Attack Bonus Getter
+int Character::getAttackBonus() const
+{
+	return attackBonus;
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 // Defense Setter
 void Character::setDefense(int newDefense)
 {
-	defense = newDefense;
+	defense = newDefense; // baseDefense + defenseBonus (given by armor)
 }
 
 // Defense Getter
@@ -111,7 +116,7 @@ int Character::getDefense() const
 // Base Defense Setter
 void Character::setBaseDefense(int newBaseDefense)
 {
-	baseDefense = newBaseDefense;
+	baseDefense = newBaseDefense; // equal to level
 }
 
 // Base Defense Getter
@@ -120,13 +125,18 @@ int Character::getBaseDefense() const
 	return baseDefense;
 }
 
-// Base Defense Modifier
-void Character::modifyDefense(int defenseBonus)
+// Defense Bonus Setter
+void Character::setDefenseBonus(int newDefenseBonus)
 {
-	defense = baseDefense + defenseBonus;
-	setDefense(defense);
+	defenseBonus = newDefenseBonus;
 }
 
+// Defense Bonus Getter
+int Character::getDefenseBonus() const
+{
+	return defenseBonus;
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 // Level Setter
 void Character::setLevel(int newLevel)
 {
@@ -138,7 +148,7 @@ int Character::getLevel() const
 {
 	return level;
 }
-
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 // Experience Setter
 void Character::setExperience(int newExperience)
 {
@@ -159,15 +169,14 @@ void Character::modifyExperience(int experiencePoints)
 	{
 		level++;
 		setLevel(level);
-		cout << "Congratulations!\nYou are now level " << level << endl;
-		maxHealth = level * 10;
-		setMaxHealth(maxHealth);
+		cout << "\n\t\aCongratulations!\n\t\tYou are now level " << level << endl;
+		setMaxHealth(level * 10);
 		setBaseAttack(level);
 		setBaseDefense(level);
 	}
 	setExperience(experience);
 }
-
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 // Coins Setter
 void Character::setCoins(int newCoins)
 {
@@ -186,11 +195,11 @@ void Character::modifyCoins(int coinChange)
 	coins += coinChange;
 	if (coinChange > 0)
 	{
-		cout << "\nYou received " << coinChange << " coins.\n";
+		cout << "\n\tYou received \033[33m" << coinChange << " coins.\033[0m\n";	// yellow
 	}
-	cout << "Current coin count: " << coins << endl;
+	cout << "\tCurrent amount: \033[33;1m" << coins << " coins.\033[0m\n";			// yellow bold
 }
-
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 // Display Details
 void Character::displayDetails() const
 {
@@ -214,7 +223,7 @@ void Character::displayDetails() const
 	cout << "\t\033[33mCoins: " << getCoins() << "\033[0m";							// yellow
 	cout << endl;
 }
-
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 void Character::hit(Character& target)
 {
 	int minDamage = (getLevel() + target.getLevel()) / 2;

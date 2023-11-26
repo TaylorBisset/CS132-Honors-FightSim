@@ -33,13 +33,15 @@ public:
 	int getAttack() const;
 	void setBaseAttack(int newBaseAttack);
 	int getBaseAttack() const;
-	void modifyAttack(int attackBonus);
+	void setAttackBonus(int newAttackBonus);
+	int getAttackBonus() const;
 
 	void setDefense(int newDefense);
 	int getDefense() const;
 	void setBaseDefense(int newBaseDefense);
 	int getBaseDefense() const;
-	void modifyDefense(int defenseBonus);
+	void setDefenseBonus(int newDefenseBonus);
+	int getDefenseBonus() const;
 
 	void setLevel(int newLevel);
 	int getLevel() const;
@@ -61,8 +63,10 @@ private:
 	int currentHealth;
 	int attack;
 	int baseAttack;
+	int attackBonus;
 	int defense;
 	int baseDefense;
+	int defenseBonus;
 	int level;
 	int experience;
 	int coins;

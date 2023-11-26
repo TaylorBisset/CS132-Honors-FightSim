@@ -102,7 +102,12 @@ void NewGame()
 	string playerName;
 	cin >> playerName;
 
-	Character playerCharacter(playerName, "A novice warrior.", 10, 10, 1, 1, 1, 1, 1, 0, 0);
+	Character playerCharacter(playerName, "A novice warrior", 
+		/*maxHealth*/ 10, 
+		/*currentHealth*/ 10, 
+		/*attack*/  1, /*baseAttack*/  1, 
+		/*defense*/ 1, /*baseDefense*/ 1,
+		/*level*/   1, /*experience*/  0, /*coins*/ 0);
 
 	cout << "\n\tWelcome, " << playerCharacter.getName() << "!\n";
 	sleep(1);
@@ -291,17 +296,18 @@ void Fight(Character& player, Character& opponent)
 		// Player attacks opponent
 		player.hit(opponent);
 		sleep(1);
-		cout << "\t\t\033[1m" << opponent.getName() << "\033[0m current health: "
+		cout << "\t\t\t\033[1m" << opponent.getName() << "\033[0m current health: "
 			<< "\033[32m" << opponent.getCurrentHealth() << "\033[0m\n";
-		sleep(1);
+		sleep(2);
 		cout << endl;
+
 		// Check if opponent is defeated
 		if (opponent.getCurrentHealth() <= 0) 
 		{
 			sleep(2);
 			cout << "You defeated the opponent!\a\n";
 			sleep(1);
-			player.modifyExperience(5);  // Gain experience for winning
+			player.modifyExperience(opponent.getLevel());  // Gain experience for winning
 			player.modifyCoins(opponent.getCoins());  // Gain coins from defeated opponent
 			sleep(2);
 			player.setCurrentHealth(player.getMaxHealth()); // Heal player before returning to IdleMenu
@@ -311,12 +317,12 @@ void Fight(Character& player, Character& opponent)
 		// Opponent attacks player
 		opponent.hit(player);
 		sleep(1);
-		cout << "\t\t\033[1m" << player.getName() << "\033[0m current health: "
+		cout << "\t\t\t\033[1m" << player.getName() << "\033[0m current health: "
 			<< "\033[32m" << player.getCurrentHealth() << "\033[0m\n";
-		sleep(1);
+		sleep(2);
 		cout << endl;
 
-		// Game Over
+		// Check if player is defeated
 		if (player.getCurrentHealth() <= 0) 
 		{
 			sleep(2);
