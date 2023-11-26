@@ -265,3 +265,16 @@ void IdleMenu(Character playerCharacter)
 		}
 	}
 }
+
+void InitializeOpponent(Character& opponent) 
+{
+	opponent.setName("Goblin");
+	opponent.setDescription("A nasty opponent");
+	opponent.setLevel(1);
+	opponent.setExperience(0);
+	opponent.setMaxHealth(10);
+	opponent.setCurrentHealth(opponent.getMaxHealth());
+	opponent.setAttack(1);
+	opponent.setDefense(1);
+	opponent.setCoins(5);
+}
