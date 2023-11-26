@@ -179,21 +179,23 @@ void Character::modifyCoins(int coinChange)
 // Display Details
 void Character::displayDetails() const
 {
+	cout << endl;
 	// name and description
 	Entity::displayDetails();
 	// health
-	cout << "\t\033[1mHealth: " << getMaxHealth() << "\033[0m / "; // Bold
-	cout << getCurrentHealth() << endl;
+	cout << "\t\033[32;1mHealth: " << getMaxHealth() << "\033[0m / ";				// green bold
+	cout << getCurrentHealth() << endl;												// green
 	// level
-	cout << "Level: " << getLevel() << endl;
+	cout << "\tLevel: " << getLevel() << endl;
 	// experience
-	cout << "Exp: " << getExperience() << endl;
+	cout << "\tExp: " << getExperience() << endl;
 	// attack
-	cout << "\t\033[31mAttack: " << getAttack() << "\033[0m\n"; // red
-	cout << "\t\033[31;2mBase Attack: " << getBaseAttack() << "\033[0m"; // red faint
+	cout << "\t\033[31mAttack: " << getAttack() << "\033[0m" << endl;				// red
+	cout << "\t\033[31;2mBase Attack: " << getBaseAttack() << "\033[0m" << endl;	// red faint
 	// defense
-	cout << "\t\033[32mDefense: " << getDefense() << "\033[0m\n"; // green
-	cout << "\t\033[32;2mBase Defense: " << getBaseDefense() << "\033[0m"; // green faint
+	cout << "\t\033[32mDefense: " << getDefense() << "\033[0m\n";					// blue
+	cout << "\t\033[32;2mBase Defense: " << getBaseDefense() << "\033[0m" << endl;	// blue faint
 	// coins
-	cout << "\t\033[33mCoins: " << getCoins() << "\033[0m / "; // yellow
+	cout << "\t\033[33mCoins: " << getCoins() << "\033[0m";							// yellow
+	cout << endl;
 }

@@ -23,5 +23,5 @@ int Armor::getProtection() const
 void Armor::displayDetails() const
 {
     Item::displayDetails();
-    cout << "\t\t\033[31;3mProtection: " << getProtection() << "\033[0m" << endl; // green italic
+    cout << "\t\t\033[34;3mProtection: " << getProtection() << "\033[0m" << endl; // blue italic
 }
