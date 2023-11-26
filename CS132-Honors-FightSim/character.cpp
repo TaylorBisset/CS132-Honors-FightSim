@@ -15,7 +15,9 @@ Character::Character()
 	baseDefense(1),
 	level(1),
 	experience(0),
-	coins(0) {}
+	coins(0),
+	attackBonus(0), 
+	defenseBonus(0) {}
 
 // Constructor
 Character::Character(const string& name, const string& description,
@@ -28,7 +30,8 @@ Character::Character(const string& name, const string& description,
 	maxHealth(maxHealth), currentHealth(currentHealth),
 	attack(attack), baseAttack(baseAttack),
 	defense(defense), baseDefense(baseDefense),
-	level(level), experience(experience), coins(coins) {}
+	level(level), experience(experience), coins(coins), 
+	attackBonus(0), defenseBonus(0) {}
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 // Max Health Setter
 void Character::setMaxHealth(int newMaxHealth)
@@ -172,7 +175,9 @@ void Character::modifyExperience(int experiencePoints)
 		cout << "\n\t\aCongratulations!\n\t\tYou are now level " << level << endl;
 		setMaxHealth(level * 10);
 		setBaseAttack(level);
+		setAttack(getBaseAttack() + getAttackBonus());
 		setBaseDefense(level);
+		setDefense(getBaseDefense() + getDefenseBonus());
 	}
 	setExperience(experience);
 }
