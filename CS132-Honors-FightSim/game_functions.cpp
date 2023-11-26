@@ -38,6 +38,8 @@ void QuitGame()
 
 void GameMenu()
 {
+	Character playerCharacter;
+
 	while (true)
 	{
 		cout << endl;
@@ -80,7 +82,7 @@ void GameMenu()
 			NewGame();
 			break;
 		case 2:
-			// Load Game
+			LoadGame(playerCharacter);
 			break;
 		case 3:
 			QuitGame();
@@ -144,6 +146,43 @@ void SaveGame(const Character& playerCharacter, const string& fileName)
 		// Error opening
 		cerr << "Unable to open the save file!\n";
 	}
+	sleep(1);
+}
+
+void LoadGame(Character& playerCharacter)
+{
+	string fileName = "SaveGame.txt";
+	ifstream loadFile(fileName);
+
+	if (loadFile.is_open())
+	{
+		string name, description;
+		int level, experience, maxHealth, currentHealth, attack, baseAttack, defense, baseDefense, coins;
+
+		loadFile >> name >> description >> level >> experience 
+			>> maxHealth >> currentHealth 
+			>> attack >> baseAttack >> defense >> baseDefense >> coins;
+
+		playerCharacter.setName(name);
+		playerCharacter.setDescription(description);
+		playerCharacter.setLevel(level);
+		playerCharacter.setExperience(experience);
+		playerCharacter.setMaxHealth(maxHealth);
+		playerCharacter.setCurrentHealth(currentHealth);
+		playerCharacter.setAttack(attack);
+		playerCharacter.setBaseAttack(baseAttack);
+		playerCharacter.setDefense(defense);
+		playerCharacter.setBaseDefense(baseDefense);
+		playerCharacter.setCoins(coins);
+
+		cout << "Game loaded successfully!\n";
+	}
+	else
+	{
+		// Error opening
+		cerr << "Unable to open the save file for loading!\n";
+	}
+	sleep(1);
 }
 
 void IdleMenu(Character playerCharacter)

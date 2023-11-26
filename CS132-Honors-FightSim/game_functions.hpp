@@ -16,6 +16,8 @@ void QuitGame();
 void GameMenu();
 
 void NewGame();
+void SaveGame(const Character& playerCharacter, const string& fileName);
+void LoadGame(Character& playerCharacter);
 
 void IdleMenu(Character playerCharacter);
 
