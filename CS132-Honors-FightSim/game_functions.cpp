@@ -2,12 +2,19 @@
 
 #include "game_functions.hpp"
 
-char ll = 200;
-char ul = 201;
-char ur = 187;
-char lr = 188;
-char hl = 186;
-char vl = 205;
+char dll = 200;
+char dul = 201;
+char dur = 187;
+char dlr = 188;
+char dhl = 186;
+char dvl = 205;
+
+char sll = 192;
+char sul = 218;
+char sur = 191;
+char slr = 217;
+char shl = 179;
+char svl = 196;
 
 void sleep(int seconds)
 {
@@ -35,30 +42,30 @@ void GameMenu()
 	{
 		cout << endl;
 		// main menu top line
-		cout << "\t" << ul;
+		cout << "\t" << dul;
 		for (int i = 0; i < 31; i++)
 		{
-			cout << vl;
+			cout << dvl;
 		}
-		cout << ur << endl;
+		cout << dur << endl;
 
-		cout << "\t" << hl << "                               " << hl << "\n";
-		cout << "\t" << hl << " \033[1mWelcome to the Armamentarium!\033[0m " << hl << "\n";
-		cout << "\t" << hl << "                               " << hl << "\n";
-		cout << "\t" << hl << "   \033[1;6mWhat would you like to do?\033[0m  " << hl << "\n";
-		cout << "\t" << hl << "                               " << hl << "\n";
-		cout << "\t" << hl << "   1  New Game                 " << hl << "\n";
-		cout << "\t" << hl << "   2  Load Game                " << hl << "\n";
-		cout << "\t" << hl << "   3  Leave Game               " << hl << "\n";
-		cout << "\t" << hl << "                               " << hl << "\n";
+		cout << "\t" << dhl << "                               " << dhl << "\n";
+		cout << "\t" << dhl << " \033[1mWelcome to the Armamentarium!\033[0m " << dhl << "\n";
+		cout << "\t" << dhl << "                               " << dhl << "\n";
+		cout << "\t" << dhl << "   \033[1;6mWhat would you like to do?\033[0m  " << dhl << "\n";
+		cout << "\t" << dhl << "                               " << dhl << "\n";
+		cout << "\t" << dhl << "   1  New Game                 " << dhl << "\n";
+		cout << "\t" << dhl << "   2  Load Game                " << dhl << "\n";
+		cout << "\t" << dhl << "   3  Leave Game               " << dhl << "\n";
+		cout << "\t" << dhl << "                               " << dhl << "\n";
 
 		// main menu end line
-		cout << "\t" << ll;
+		cout << "\t" << dll;
 		for (int i = 0; i < 31; i++)
 		{
-			cout << vl;
+			cout << dvl;
 		}
-		cout << lr << endl << endl << "\t";
+		cout << dlr << endl << endl << "\t";
 
 		int choice;
 		string name;
