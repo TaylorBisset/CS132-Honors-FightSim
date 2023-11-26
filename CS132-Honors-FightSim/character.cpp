@@ -225,16 +225,16 @@ void Character::displayDetails() const
 	cout << "\t\033[34mDefense: " << getDefense() << "\033[0m\n";					// blue
 	cout << "\t\033[34;2mBase Defense: " << getBaseDefense() << "\033[0m" << endl;	// blue faint
 	// coins
-	cout << "\t\033[33mCoins: " << getCoins() << "\033[0m";							// yellow
+	cout << "\t\033[33;1mCoins: " << getCoins() << "\033[0m";						// yellow bold
 	cout << endl;
 }
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 void Character::hit(Character& target)
 {
-	int minDamage = (getLevel() + target.getLevel()) / 2;
+	int minDamage = getLevel();
 	int damage = max(minDamage, getAttack() - target.getDefense()); 
 	// subtracts health according to difference
 	target.modifyCurrentHealth(-damage);
 	// announces damage dealt from one to another
-	cout << getName() << " hits " << target.getName() << " for " << damage << " damage!\n";
+	cout << getName() << " hits " << target.getName() << " for \033[1m" << damage << " damage!\033[0m\n";
 }
