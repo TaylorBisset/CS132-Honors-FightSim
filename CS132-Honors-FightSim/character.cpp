@@ -2,6 +2,20 @@
 
 #include "character.hpp"
 
+// Default Constructor
+Character::Character()
+	: 
+	Entity("", ""),
+	maxHealth(10),
+	currentHealth(10),
+	attack(1),
+	baseAttack(1),
+	defense(1),
+	baseDefense(1),
+	level(1),
+	experience(0),
+	coins(0) {}
+
 // Constructor
 Character::Character(const string& name, const string& description,
 	int maxHealth, int currentHealth,

@@ -14,6 +14,8 @@ This class is the main character class from which all characters will inherit.
 class Character : public Entity
 {
 public:
+	Character();
+
 	Character(const string& name, const string& description,
 		int maxHealth, int currentHealth,
 		int attack, int baseAttack,
