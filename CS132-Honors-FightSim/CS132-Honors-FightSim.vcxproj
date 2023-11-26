@@ -143,6 +143,9 @@
     <ClInclude Include="item.hpp" />
     <ClInclude Include="weapon.hpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="SaveGame.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

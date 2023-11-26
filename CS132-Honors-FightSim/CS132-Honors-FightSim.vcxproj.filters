@@ -57,4 +57,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="SaveGame.txt" />
+  </ItemGroup>
 </Project>

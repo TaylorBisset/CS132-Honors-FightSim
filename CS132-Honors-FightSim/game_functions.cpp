@@ -113,12 +113,47 @@ void NewGame()
 	IdleMenu(playerCharacter);
 }
 
+void SaveGame(const Character& playerCharacter, const string& fileName)
+{
+	ofstream saveFile(fileName);
+
+	if (saveFile.is_open())
+	{
+		saveFile << playerCharacter.getName()			<< endl;
+		saveFile << playerCharacter.getDescription()	<< endl;
+
+		saveFile << playerCharacter.getLevel()			<< endl;
+		saveFile << playerCharacter.getExperience()		<< endl;
+
+		saveFile << playerCharacter.getMaxHealth()		<< endl;
+		saveFile << playerCharacter.getCurrentHealth()	<< endl;
+
+		saveFile << playerCharacter.getAttack()			<< endl;
+		saveFile << playerCharacter.getBaseAttack()		<< endl;
+
+		saveFile << playerCharacter.getDefense()		<< endl;
+		saveFile << playerCharacter.getBaseDefense()	<< endl;
+
+		saveFile << playerCharacter.getCoins()			<< endl;
+
+		saveFile.close();
+		cout << "Game saved successfully!\n";
+	}
+	else
+	{
+		// Error opening
+		cerr << "Unable to open the save file!\n";
+	}
+}
+
 void IdleMenu(Character playerCharacter)
 {
 	while (true)
 	{
 		cout << "\n\tWelcome back, " << playerCharacter.getName() << endl << endl;
+
 		// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 		// idle menu top line
 		cout << "\t" << sul;
 		for (int i = 0; i < 28; i++)
@@ -169,7 +204,7 @@ void IdleMenu(Character playerCharacter)
 			// Implement the buy gear logic
 			break;
 		case 5:
-			// SaveGame()
+			SaveGame(playerCharacter, "SaveGame.txt");
 			sleep(1);
 			break;
 		case 6:
