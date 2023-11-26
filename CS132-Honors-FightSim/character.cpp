@@ -1,6 +1,7 @@
 // character.cpp
 
 #include "character.hpp"
+#include "game_functions.hpp"
 
 // Default Constructor
 Character::Character()
@@ -216,10 +217,11 @@ void Character::displayDetails() const
 
 void Character::hit(Character& target)
 {
-	// set to zero, and does not apply any health change if attack is lower than defense
-	int damage = max(0, getAttack() - target.getDefense()); 
+	int minDamage = (getLevel() + target.getLevel()) / 2;
+	int damage = max(minDamage, getAttack() - target.getDefense()); 
 	// subtracts health according to difference
 	target.modifyCurrentHealth(-damage);
-	// announces damage dealth from one to another
+	// announces damage dealt from one to another
 	cout << getName() << " hits " << target.getName() << " for " << damage << " damage!\n";
+	sleep(1);
 }
