@@ -67,7 +67,9 @@ void GameMenu()
 			cout << dvl;
 		}
 		cout << dlr << endl << endl << "\t";
+
 		// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 		int choice;
 		string name;
 		cin >> choice;
@@ -117,32 +119,63 @@ void IdleMenu(Character playerCharacter)
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 	// idle menu top line
 	cout << "\t" << sul;
-	for (int i = 0; i < 27; i++)
+	for (int i = 0; i < 28; i++)
 	{
 		cout << svl;
 	}
 	cout << sur << endl;
 
-	cout << "\t" << shl << "                           " << shl << "\n";
-	cout << "\t" << shl << "        \033[1mEntering the\033[0m       " << shl << "\n";
-	cout << "\t" << shl << "       \033[1mArmamentarium!\033[0m      " << shl << "\n";
-	cout << "\t" << shl << "                           " << shl << "\n";
-	cout << "\t" << shl << "      \033[1;6mMake your choice\033[0m     " << shl << "\n";
-	cout << "\t" << shl << "                           " << shl << "\n";
-	cout << "\t" << shl << "  1  Fight next opponent   " << shl << "\n";
-	cout << "\t" << shl << "  2  View stats            " << shl << "\n";
-	cout << "\t" << shl << "  3  Equip gear            " << shl << "\n";
-	cout << "\t" << shl << "  4  Buy gear              " << shl << "\n";
-	cout << "\t" << shl << "  5  Save game             " << shl << "\n";
-	cout << "\t" << shl << "  6  Exit the game         " << shl << "\n";
-	cout << "\t" << shl << "                           " << shl << "\n";
+	cout << "\t" << shl << "                            " << shl << "\n";
+	cout << "\t" << shl << "         \033[1mEntering the\033[0m       " << shl << "\n";
+	cout << "\t" << shl << "        \033[1mArmamentarium!\033[0m      " << shl << "\n";
+	cout << "\t" << shl << "                            " << shl << "\n";
+	cout << "\t" << shl << "       \033[1;6mMake your choice\033[0m     " << shl << "\n";
+	cout << "\t" << shl << "                            " << shl << "\n";
+	cout << "\t" << shl << "   1  Fight opponent        " << shl << "\n";
+	cout << "\t" << shl << "   2  View stats            " << shl << "\n";
+	cout << "\t" << shl << "   3  Equip gear            " << shl << "\n";
+	cout << "\t" << shl << "   4  Buy gear              " << shl << "\n";
+	cout << "\t" << shl << "   5  Save game             " << shl << "\n";
+	cout << "\t" << shl << "   6  Exit the game         " << shl << "\n";
+	cout << "\t" << shl << "                            " << shl << "\n";
 
 	// idle menu end line
 	cout << "\t" << sll;
-	for (int i = 0; i < 27; i++)
+	for (int i = 0; i < 28; i++)
 	{
 		cout << svl;
 	}
 	cout << slr << endl << endl << "\t";
+
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+	int choice;
+	cin >> choice;
+
+	switch (choice)
+	{
+	case 1:
+		// Implement the fight logic
+		break;
+	case 2:
+		playerCharacter.displayDetails();
+		break;
+	case 3:
+		// Implement the equip gear logic
+		break;
+	case 4:
+		// Implement the buy gear logic
+		break;
+	case 5:
+		// SaveGame()
+		sleep(1);
+		break;
+	case 6:
+		cout << "\nExiting the game.\n";
+		QuitGame();
+		return;
+	default:
+		cout << "\nInvalid choice.\nPlease select a valid option.\n\n";
+		break;
+	}
 }
