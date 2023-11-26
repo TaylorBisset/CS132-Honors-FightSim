@@ -52,8 +52,6 @@ public:
 
 	void displayDetails() const override;
 
-	Character NewGame();
-
 private:
 	int maxHealth;
 	int currentHealth;

@@ -41,6 +41,7 @@ void GameMenu()
 	while (true)
 	{
 		cout << endl;
+		// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 		// main menu top line
 		cout << "\t" << dul;
 		for (int i = 0; i < 31; i++)
@@ -66,7 +67,7 @@ void GameMenu()
 			cout << dvl;
 		}
 		cout << dlr << endl << endl << "\t";
-
+		// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 		int choice;
 		string name;
 		cin >> choice;
@@ -107,5 +108,41 @@ void NewGame()
 	sleep(1);
 	playerCharacter.modifyCoins(10);
 	sleep(2);
-	// IdleMenu
+	IdleMenu(playerCharacter);
+}
+
+void IdleMenu(Character playerCharacter)
+{
+	cout << "\n\tWelcome back, " << playerCharacter.getName() << endl << endl;
+	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+	// idle menu top line
+	cout << "\t" << sul;
+	for (int i = 0; i < 27; i++)
+	{
+		cout << svl;
+	}
+	cout << sur << endl;
+
+	cout << "\t" << shl << "                           " << shl << "\n";
+	cout << "\t" << shl << "        \033[1mEntering the\033[0m       " << shl << "\n";
+	cout << "\t" << shl << "       \033[1mArmamentarium!\033[0m      " << shl << "\n";
+	cout << "\t" << shl << "                           " << shl << "\n";
+	cout << "\t" << shl << "      \033[1;6mMake your choice\033[0m     " << shl << "\n";
+	cout << "\t" << shl << "                           " << shl << "\n";
+	cout << "\t" << shl << "  1  Fight next opponent   " << shl << "\n";
+	cout << "\t" << shl << "  2  View stats            " << shl << "\n";
+	cout << "\t" << shl << "  3  Equip gear            " << shl << "\n";
+	cout << "\t" << shl << "  4  Buy gear              " << shl << "\n";
+	cout << "\t" << shl << "  5  Save game             " << shl << "\n";
+	cout << "\t" << shl << "  6  Exit the game         " << shl << "\n";
+	cout << "\t" << shl << "                           " << shl << "\n";
+
+	// idle menu end line
+	cout << "\t" << sll;
+	for (int i = 0; i < 27; i++)
+	{
+		cout << svl;
+	}
+	cout << slr << endl << endl << "\t";
+	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 }

@@ -17,4 +17,6 @@ void GameMenu();
 
 void NewGame();
 
+void IdleMenu(Character playerCharacter);
+
 #endif // GAME_FUNCTIONS_HPP
