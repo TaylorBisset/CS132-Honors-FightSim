@@ -299,7 +299,7 @@ void Fight(Character& player, Character& opponent)
 
 	cout << "                     \033[1;6;7m V S \033[0m";
 
-	sleep(2;
+	sleep(2);
 	cout << "\n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~\n";
 	opponent.displayDetails();
 	cout << "\n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~\n";
