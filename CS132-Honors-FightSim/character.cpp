@@ -170,7 +170,7 @@ void Character::modifyExperience(int experiencePoints)
 	experience += experiencePoints;
 	int requiredExp = level * 10;
 
-	if (experience >= requiredExp && experiencePoints >= requiredExp)
+	if (experience >= requiredExp)
 	{
 		level++;
 		setLevel(level);

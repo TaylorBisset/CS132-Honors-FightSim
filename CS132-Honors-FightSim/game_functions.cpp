@@ -289,21 +289,22 @@ void InitializeOpponent(Character& opponent)
 
 void Fight(Character& player, Character& opponent) 
 {
-	cout << "\n*** Fight begins! ***\n";
+	cout << "\n\t\t\033[1m*** Fight begins! ***\033[0m\n";
 
-	sleep(1);
+	sleep(2);
 	cout << "\n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~\n";
 	player.displayDetails();
 	cout << "\n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~\n";
-	sleep(1);
+	sleep(2);
 
 	cout << "                     \033[1;6;7m V S \033[0m";
 
-	sleep(1);
+	sleep(2;
 	cout << "\n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~\n";
 	opponent.displayDetails();
 	cout << "\n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~\n";
 	sleep(3);
+	cout << endl;
 
 	while (player.getCurrentHealth() > 0 && opponent.getCurrentHealth() > 0) 
 	{
