@@ -1,5 +1,10 @@
 // armor.cpp
 
+/*
+Implements the `Armor` class, a subclass of the `Item` class. 
+Defines methods to set and get armor protection and displays armor details.
+*/
+
 #include "armor.hpp"
 
 // Constructor

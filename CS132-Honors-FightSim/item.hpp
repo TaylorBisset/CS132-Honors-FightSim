@@ -1,7 +1,10 @@
+// item.hpp
+
 /*
-item.hpp
-Item subclass for all item entities in the game.
-This class is the main item class from which all items will inherit.
+This header file defines the `Item` class, a subclass of the `Entity` class. 
+It serves as the main class for all item entities in the game, 
+ inheriting basic properties from the general entity class. 
+It includes functions for setting and getting item type, value, and displaying item details.
 */
 
 #ifndef ITEM_HPP

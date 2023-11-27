@@ -1,7 +1,10 @@
+// armor.hpp
+ 
 /*
-armor.hpp
-Armor subclass for all armor items in the game.
-This class is the main armor class from which all protection items will inherit.
+This file defines the `Armor` class, a subclass of the `Item` class. 
+It serves as the main class for all armor items in the game, 
+ inheriting properties from the general item class. 
+It includes functions for setting and getting protection values and displaying item details.
 */
 
 #ifndef ARMOR_HPP

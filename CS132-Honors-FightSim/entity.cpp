@@ -1,5 +1,10 @@
 // entity.cpp
 
+/*
+Implements the `Entity` class, a base class for all objects in the game. 
+Handles common attributes like name and description, with a method to display entity details.
+*/
+
 #include "entity.hpp"
 
 // Constructor

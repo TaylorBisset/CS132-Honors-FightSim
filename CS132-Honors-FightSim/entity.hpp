@@ -1,7 +1,11 @@
+// entity.hpp
+
 /*
-entity.hpp
-Base class for all objects in the game.
-This class is the base entity from which all objects will inherit.
+This file contains the definition of the base class `Entity`. 
+It serves as the foundational class for all objects in the game, 
+ providing basic attributes like name and description. 
+It includes functions for setting and getting the name and description of an entity 
+ and provides a virtual function for displaying entity details.
 */
 
 #ifndef ENTITY_HPP

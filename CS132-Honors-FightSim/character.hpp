@@ -1,7 +1,13 @@
+// character.hpp
+
 /*
-character.hpp
-Character subclass for all character entities in the game.
-This class is the main character class from which all characters will inherit.
+
+This header file defines the `Character` class, a subclass of the `Entity` class. 
+It functions as the main class for all character entities in the game, 
+ inheriting basic properties from the general entity class. 
+It includes functions for managing character attributes
+ such as health, attack, defense, level, experience, and coins. 
+Additionally, it provides functions for hitting a target and displaying character details.
 */
 
 #ifndef CHARACTER_HPP

@@ -1,7 +1,10 @@
+// weapon.hpp
+
 /*
-weapon.hpp
-Weapon subclass for all weapon items in the game.
-This class is the main weapon class from which all damage items will inherit.
+This file contains the definition of the `Weapon` class, a subclass of the `Item` class. 
+It functions as the main class for all weapon items in the game, 
+ inheriting characteristics from the general item class. 
+It includes functions for setting and getting damage values and displaying item details.
 */
 
 #ifndef WEAPON_HPP

@@ -1,5 +1,11 @@
 // character.cpp
 
+/*
+Implements the Character class, a subclass of the Entity class. 
+Manages character-specific attributes like health, attack, defense, level, experience, and coins. 
+Includes methods for displaying details and handling character actions.
+*/
+
 #include "character.hpp"
 #include "game_functions.hpp"
 

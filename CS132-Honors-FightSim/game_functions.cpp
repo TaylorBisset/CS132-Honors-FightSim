@@ -1,5 +1,12 @@
 // game_functions.cpp
 
+/*
+Implements various game-related functions, 
+ including handling sleep intervals, 
+ quitting the game, displaying menus, 
+ managing game state, and character fights.
+*/
+
 #include "game_functions.hpp"
 
 char dll = static_cast <char>(200);

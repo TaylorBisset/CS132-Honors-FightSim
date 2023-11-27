@@ -1,5 +1,10 @@
 // weapon.cpp
 
+/*
+Implements the `Weapon` class, which is a subclass of the `Item` class. 
+Defines methods to set and get weapon damage and displays weapon details.
+*/
+
 #include "weapon.hpp"
 
 // Constructor

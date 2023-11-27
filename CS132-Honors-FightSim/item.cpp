@@ -1,5 +1,11 @@
 // item.cpp
 
+/*
+Implements the `Item` class, a subclass of the `Entity` class. 
+Manages item properties such as name, description, type, and value. 
+Provides a method to display item details.
+*/
+
 #include "item.hpp"
 
 // Constructor
