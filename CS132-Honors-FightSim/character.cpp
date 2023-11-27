@@ -168,11 +168,13 @@ int Character::getExperience() const
 void Character::modifyExperience(int experiencePoints)
 {
 	experience += experiencePoints;
-	if (experience >= (level * 10))
+	int requiredExp = level * 10;
+
+	if (experience >= requiredExp && experiencePoints >= requiredExp)
 	{
 		level++;
 		setLevel(level);
-		cout << "\n\t\aCongratulations!\n\t\tYou are now level " << level << endl;
+		cout << "\n\t\aCongratulations!\n\t\tYou are now\033[1m level " << level << "\033[0m\n";
 		setMaxHealth(level * 10);
 		setBaseAttack(level);
 		setAttack(getBaseAttack() + getAttackBonus());

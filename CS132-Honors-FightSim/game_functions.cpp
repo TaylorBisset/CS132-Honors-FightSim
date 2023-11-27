@@ -289,14 +289,28 @@ void InitializeOpponent(Character& opponent)
 
 void Fight(Character& player, Character& opponent) 
 {
-	cout << "\n*** Fight begins! ***\n\n";
+	cout << "\n*** Fight begins! ***\n";
+
+	sleep(1);
+	cout << "\n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~\n";
+	player.displayDetails();
+	cout << "\n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~\n";
+	sleep(1);
+
+	cout << "                     \033[1;6;7m V S \033[0m";
+
+	sleep(1);
+	cout << "\n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~\n";
+	opponent.displayDetails();
+	cout << "\n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~\n";
+	sleep(3);
 
 	while (player.getCurrentHealth() > 0 && opponent.getCurrentHealth() > 0) 
 	{
 		// Player attacks opponent
 		player.hit(opponent);
 		sleep(1);
-		cout << "\t\t\t\033[1m" << opponent.getName() << "\033[0m current health: "
+		cout << "\n\t\t\t\033[1m" << opponent.getName() << "\033[0m current health: "
 			<< "\033[32m" << opponent.getCurrentHealth() << "\033[0m\n";
 		sleep(2);
 		cout << endl;
@@ -304,8 +318,7 @@ void Fight(Character& player, Character& opponent)
 		// Check if opponent is defeated
 		if (opponent.getCurrentHealth() <= 0) 
 		{
-			sleep(2);
-			cout << "You defeated the opponent!\a\n";
+			cout << "\aYou defeated the opponent!\n";
 			sleep(1);
 			player.modifyExperience(opponent.getLevel());  // Gain experience for winning
 			player.modifyCoins(opponent.getCoins());  // Gain coins from defeated opponent
@@ -317,7 +330,7 @@ void Fight(Character& player, Character& opponent)
 		// Opponent attacks player
 		opponent.hit(player);
 		sleep(1);
-		cout << "\t\t\t\033[1m" << player.getName() << "\033[0m current health: "
+		cout << "\n\t\t\t\033[1m" << player.getName() << "\033[0m current health: "
 			<< "\033[32m" << player.getCurrentHealth() << "\033[0m\n";
 		sleep(2);
 		cout << endl;
@@ -325,7 +338,6 @@ void Fight(Character& player, Character& opponent)
 		// Check if player is defeated
 		if (player.getCurrentHealth() <= 0) 
 		{
-			sleep(2);
 			cout << "\n\tYou were defeated by the opponent.\n\tGame over.\n";
 			sleep(2);
 			GameMenu();
